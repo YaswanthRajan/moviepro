@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body %}
+<body style="background-color:red" >
+<div class="container">
+<div class="row">
+    <div class="col-md-6">
+        <img src="{{sd.image.url}}" style="height:300px; width:400px; padding-top: 4%" >
+    </div>
+    <div class="col-md-6">
+    {{sd.name}}<br>
+{{sd.year}}<br>
+    {{sd.des}}
+        </div>
+    </div>
+</div>
+<a class="btn btn-light" href="{% url 'movie:update' sd.id %}">
+    update
+</a>
+<a class="btn btn-danger" href="{% url 'movie:delete' sd.id %}">
+    delete
+</a>
+{% endblock %}
